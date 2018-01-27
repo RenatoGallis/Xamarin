@@ -33,9 +33,13 @@ namespace XF.Contatos.Droid
             var context = Forms.Context as Activity;
             var captura = new MediaPicker(context);
 
-            var intent = captura.GetTakePhotoUI(new StoreCameraMediaOptions
+            //var intent = captura.GetTakePhotoUI(new StoreCameraMediaOptions
+            //{
+            //    DefaultCamera = CameraDevice.Rear
+            //});
+            var intent = captura.GetTakePhotoUI(new Xamarin.Media.StoreCameraMediaOptions
             {
-                DefaultCamera = CameraDevice.Rear
+                DefaultCamera = Xamarin.Media.CameraDevice.Rear
             });
             context.StartActivityForResult(intent, 1);
         }
